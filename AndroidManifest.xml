@@ -1,0 +1,58 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		package="com.androidemu.gbc"
+		android:versionCode="32"
+		android:versionName="1.8.5"
+		android:installLocation="preferExternal">
+
+	<uses-sdk android:minSdkVersion="3"  android:targetSdkVersion="10"/>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+	<application android:label="@string/app_label" android:allowBackup="true"
+			android:icon="@drawable/app_icon" android:hardwareAccelerated="true">
+
+		<activity android:name="com.androidemu.gbc.GBCActivity"
+				android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity-alias android:name="CreateShortcuts"
+				android:targetActivity="com.androidemu.gbc.GBCActivity"
+				android:label="@string/launcher_shortcut_name">
+			<intent-filter>
+				<action android:name="android.intent.action.CREATE_SHORTCUT" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity-alias>
+
+		<activity android:name="StateSlotsActivity" android:theme="@android:style/Theme.Dialog" />
+		<activity android:name="KeyProfilesActivity"/>
+
+		<activity android:name="EmulatorSettings" android:process=":emulator"/>
+
+		<activity android:name="com.androidemu.EmulatorActivity"
+				android:process=":emulator"
+				android:launchMode="singleTask"
+				android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:scheme="file" />
+				<data android:mimeType="application/zip" />
+				<data android:mimeType="application/octet-stream" />
+			</intent-filter>
+		</activity>
+
+		<!-- common components - will be omitted after manifest merging support -->
+		<activity android:name="com.androidemu.FileChooser" />
+		<activity android:name="com.androidemu.HelpActivity" />
+		<activity android:name="com.androidemu.CheatsActivity" android:process=":emulator"/>
+		<service android:name="com.androidemu.EmulatorService" android:process=":emulator"/>
+
+	</application>
+</manifest>
