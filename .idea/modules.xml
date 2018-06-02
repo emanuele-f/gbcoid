@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gbcoid/gbcoid.iml" filepath="$PROJECT_DIR$/gbcoid/gbcoid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gbcoid-code.iml" filepath="$PROJECT_DIR$/gbcoid-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libemudroid/libemudroid.iml" filepath="$PROJECT_DIR$/libemudroid/libemudroid.iml" />
+    </modules>
+  </component>
+</project>

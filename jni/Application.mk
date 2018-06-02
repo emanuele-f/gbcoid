@@ -1,3 +1,0 @@
-APP_BUILD_SCRIPT = $(APP_PROJECT_PATH)/Android.mk
-
-EMU_LIBRARY_PATH = $(APP_PROJECT_PATH)/../emudroid-common/
