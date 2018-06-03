@@ -15,6 +15,7 @@ A freshly generated APK can be found [here](gbcoid/release). It includes the fol
 
 - Use a more recent gui, libemudroid version
 - Fix crackling noise after resuming music (libemudroid)
+- Smoother DPAD movements
 
 # Notes
 

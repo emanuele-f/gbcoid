@@ -84,7 +84,7 @@ public class VirtualKeypad
 	public final void resize(int w, int h)
 	{
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-		vibratorEnabled = prefs.getBoolean("enableVibrator", true);
+		vibratorEnabled = prefs.getBoolean("enableVibrator", false);
 		dpad4Way = prefs.getBoolean("dpad4Way", false);
 
 		int value = prefs.getInt("dpadDeadZone", 2);
@@ -224,7 +224,7 @@ public class VirtualKeypad
 
 	private void reposition(int w, int h, SharedPreferences prefs)
 	{
-		String layout = prefs.getString("vkeypadLayout", "top_bottom");
+		String layout = prefs.getString("vkeypadLayout", "bottom_bottom");
 
 		if ("top_bottom".equals(layout))
 			makeTopBottom(w, h);
@@ -368,10 +368,14 @@ public class VirtualKeypad
 			float x = getEventX(event, i, flip);
 			float y = getEventY(event, i, flip);
 			Control c = findControl(x, y);
+
+			/* Smoother dpad movements */
+			if((c == null) && (((keyStates & Keycodes.GAMEPAD_UP_RIGHT) != 0) || /* Was moving up/right */
+                        (x <= view.getWidth()*scaleX/2))) /* Touched left-half part of the screen */
+			    c =  dpad;
+
 			if (c != null)
-			{
 				states |= getControlStates(c, x, y, Wrapper.MotionEvent_getSize(event, i));
-			}
 		}
 		setKeyStates(states);
 		return true;
