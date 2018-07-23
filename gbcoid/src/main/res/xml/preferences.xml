@@ -79,10 +79,11 @@
 
 			<CheckBoxPreference android:key="enableVibrator"
 					android:title="@string/enable_vibrator"
-					android:defaultValue="true"/>
+					android:defaultValue="false"/>
 
 			<CheckBoxPreference android:key="dpad4Way"
-					android:title="@string/dpad_4way"/>
+					android:title="@string/dpad_4way"
+					android:defaultValue="true"/>
 
 			<com.androidemu.persistent.SeekBarPreference
 					android:key="dpadDeadZone"
@@ -112,7 +113,7 @@
 						android:title="@string/vkeypad_size"
 						android:entries="@array/vkeypad_size_entries"
 						android:entryValues="@array/vkeypad_size_entryvalues"
-						android:defaultValue="medium"/>
+						android:defaultValue="large"/>
 
 				<com.androidemu.persistent.SeekBarPreference
 						android:key="vkeypadTransparency"
@@ -139,7 +140,7 @@
 					android:title="@string/vkeypad_layout"
 					android:entries="@array/vkeypad_layout_entries"
 					android:entryValues="@array/vkeypad_layout_entryvalues"
-					android:defaultValue="top_bottom"/>
+					android:defaultValue="bottom_bottom"/>
 
 			<com.androidemu.persistent.SeekBarPreference
 					android:key="layoutMargin"

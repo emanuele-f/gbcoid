@@ -85,7 +85,7 @@ public class VirtualKeypad
 	{
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		vibratorEnabled = prefs.getBoolean("enableVibrator", false);
-		dpad4Way = prefs.getBoolean("dpad4Way", false);
+		dpad4Way = prefs.getBoolean("dpad4Way", true);
 
 		int value = prefs.getInt("dpadDeadZone", 2);
 		value = (value < 0 ? 0 : (value > 4 ? 4 : value));
@@ -135,7 +135,7 @@ public class VirtualKeypad
 
 	private static float getControlScale(SharedPreferences prefs)
 	{
-		String value = prefs.getString("vkeypadSize", null);
+		String value = prefs.getString("vkeypadSize", "large");
 		if ("small".equals(value)) return 1.0f;
 		if ("large".equals(value)) return 1.33333f;
 		return 1.2f;

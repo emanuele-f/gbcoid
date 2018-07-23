@@ -17,7 +17,7 @@ A freshly generated APK can be found [here](gbcoid/release). It includes the fol
 - Fix crackling noise after resuming music (libemudroid)
 - Smoother DPAD movements
 
-*UPDATE* On the web is available an official gbcoid 1.8.6 apk which already fixes the issues above.
+*UPDATE* On the web is available an official gbcoid 1.8.6 apk which fixes some of the issues above.
 https://www.emuparadise.me/Nintendo_Game_Boy_Color_Emulators/Android/GBCoid/130
 
 # Notes
